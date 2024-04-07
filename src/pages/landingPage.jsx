@@ -7,16 +7,19 @@ import facebook from "@/assets/facebook.png";
 import twitter from "@/assets/twitter.png";
 import linkedIn from "@/assets/linkedIn.png";
 import instagram from "@/assets/instagram.png";
+import {
+    Link,
+} from "react-router-dom"
 
 export default function LandingPage() {
     return (
         <>
             <div className="lp">
                 <nav className="lp-nav">
-                    <img className="lp-logo" src = {logo} />
+                    <img className="logo" src = {logo} />
                     <div className="lp-auth">
-                        <button>Log In</button>
-                        <button>Sign Up</button>
+                        <Link className="login-button" to="/signup">Log In</Link>
+                        <Link className="signup-button" to="/signup">Sign Up</Link>
                     </div>
                 </nav>
                 <div className="hero1">
@@ -47,7 +50,7 @@ export default function LandingPage() {
                     <button>Get Started</button>
                 </div>
                 <div className="footer">
-                    <img className="lp-logo footer-logo footer-div" src = {logo} />
+                    <img className="logo footer-logo footer-div" src = {logo} />
                     <div className="footer1 footer-div">
                         <h3>Product</h3>
                         <h4>Physical ticketing</h4>

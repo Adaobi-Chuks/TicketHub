@@ -18,7 +18,7 @@ button {
   align-items: center;
 }
 
-.lp-logo {
+.logo {
   height: 60px;
   margin: 10px;
 }
@@ -31,12 +31,9 @@ button {
   font-size: 10px;
 }
 
-.lp-auth button {
+.login-button, .signup-button{
   font-weight: 700;
   font-size: 15px;
-}
-
-.lp-auth button {
   border-radius: 12px;
   background-color: #0D2986;
   border: none;
@@ -44,6 +41,8 @@ button {
   width: 100px;
   margin-left: 10px;
   color: #FFFFFF;
+  padding: 15px;
+  text-decoration: none;
 }
 
 .hero1  {
