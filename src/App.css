@@ -1,0 +1,179 @@
+body {
+  background-color: #232323;
+  font-family: "Poppins";
+}
+
+button {
+  cursor: pointer;
+}
+
+.lp {
+  padding: 40px;
+  color: #FFFFFF;
+}
+
+.lp-nav {
+  border-bottom: 0.5px solid #FFFFFF66;
+  display: flex;
+  align-items: center;
+}
+
+.lp-logo {
+  height: 60px;
+  margin: 10px;
+}
+
+.lp-auth {
+  margin-left: auto;
+  font-weight: 600;
+  font-size: 20px;
+  font-weight: 700;
+  font-size: 10px;
+}
+
+.lp-auth button {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.lp-auth button {
+  border-radius: 12px;
+  background-color: #0D2986;
+  border: none;
+  height: 35px;
+  width: 100px;
+  margin-left: 10px;
+  color: #FFFFFF;
+}
+
+.hero1  {
+  margin: 70px 100px 0 100px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-image1 {
+  height: 300px;
+  margin-left: auto;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 40px;
+}
+
+h4 {
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.hero1 h2 {
+  margin-bottom: 0;
+}
+
+.hero1 h4 {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.hero1 button, .hero4 button {
+  border-radius: 12px;
+  color: #FFFFFF;
+  border: none;
+  height: 50px;
+  width: 150px;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.hero1 button{
+  background-color: #0D2986;
+}
+
+.hero2, .hero3  {
+  display: flex;
+  align-items: center;
+}
+
+.hero2 {
+  margin: 80px 50px 0 50px;
+}
+
+.hero3 {
+  margin-top: 120px;
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.hero4 {
+  margin: 100px 150px 0 150px;
+  background-color: #0D2986;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  border-radius: 47px;
+}
+
+.hero4 h3, .footer h3 {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.hero4 h4, .footer h4 {
+  font-size: 12px;
+  margin-top: 0;
+  margin-bottom: 35px;
+}
+
+.hero4 button{
+  background-color: #232323;
+}
+
+.footer {
+  margin: 100px 70px 0 0px;
+  border-top: 0.5px solid #FFFFFF66;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.social-logo{
+  height: 30px;
+  margin-left: 5px;
+}
+
+.footer-logo {
+  align-self: center;
+  margin-right: 42%;
+}
+
+.footer3 {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer1, footer2 {
+  margin-right: 10%;
+}
+
+.footer-div {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.footer-div h3 {
+  margin-bottom: 10px;
+}
+
+.footer-div h4 {
+ margin-top: 3px;
+ margin-bottom: 0;
+}
