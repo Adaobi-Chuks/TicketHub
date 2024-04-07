@@ -10,13 +10,20 @@ import Event from "./component/pages/Event";
 import Transaction from "./component/pages/Transaction";
 import Checking from "./component/pages/Checking";
 import LandingScreen from './component/pages/LandingScreen';
+import DashBoard from './DashBoard';
 
 
 
 function App() {
   return (
     <Router>
+      
+      <DashBoard>
       <Navbar/>
+      </DashBoard>
+      
+      
+     
       <Routes>
       <Route index element={<LandingScreen/>} />
       <Route path="Login" element={<Login/>} />
