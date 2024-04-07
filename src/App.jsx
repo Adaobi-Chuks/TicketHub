@@ -1,4 +1,3 @@
-import React from "react"
 import './App.css';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Login from "./component/auth/Login";
@@ -10,14 +9,16 @@ import CreateEvent from "./component/pages/CreateEvent";
 import Event from "./component/pages/Event";
 import Transaction from "./component/pages/Transaction";
 import Checking from "./component/pages/Checking";
-import LandingPage from "./component/pages/LandingPage";
+import LandingScreen from './component/pages/LandingScreen';
+
+
 
 function App() {
   return (
     <Router>
       <Navbar/>
       <Routes>
-      <Route index element={<LandingPage/>} />
+      <Route index element={<LandingScreen/>} />
       <Route path="Login" element={<Login/>} />
       <Route path="Register" element={<Register/>} />
       <Route path="Home" element={<Home/>} />
