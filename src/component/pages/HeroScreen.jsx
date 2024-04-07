@@ -3,7 +3,7 @@ import IMG1  from '../../assets/hero-image1.png'
  
 const HeroScreen = () => {
   return (
-    <section id="home" className="min-h-screen  flex  md:flex-row grid-col-2 items-center justify-center">
+    <section id="home" className="min-h-screen  flex  md:flex-row pt-10 grid-col-2 items-center justify-center">
        <div className='grid justify-center items-center w-[80rem]'>
       <div className='max-w-full mx-auto grid md:grid-cols-2 gap-16 px-20 justify-center items-center  pt-[5rem]'>
       <div className='md:w-[40rem]'>
