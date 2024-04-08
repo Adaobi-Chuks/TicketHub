@@ -14,6 +14,11 @@ import DashBoard from './DashBoard';
 import CreateTime from './component/pages/CreateTime';
 import CreateSocial from './component/pages/CreateSocial';
 import CreateImage from './component/pages/CreateImage';
+import ChooseTicket from './component/pages/ChooseTicket';
+import SingleTicket from './component/pages/SingleTicket';
+import GroupTicket from './component/pages/GroupTicket';
+import CheckOut from './component/pages/CheckOut';
+import Summary from './component/pages/Summary';
 
 
 
@@ -37,9 +42,14 @@ function App() {
       <Route path="CreateTime" element={<CreateTime/>} />
       <Route path="CreateSocial" element={<CreateSocial/>} />
       <Route path="CreateImage" element={<CreateImage/>} />
+      <Route path="ChooseTicket" element={<ChooseTicket/>} />
       <Route path="Event" element={<Event/>} />
+      <Route path="CheckOut" element={<CheckOut/>} />
       <Route path="Transaction" element={<Transaction/>} />
+      <Route path="SingleTicket" element={<SingleTicket/>} />
+      <Route path="GroupTicket" element={<GroupTicket/>} />
       <Route path="Checking" element={<Checking/>} />
+      <Route path="Summary" element={<Summary/>} />
       </Routes>
     </Router>
   )
