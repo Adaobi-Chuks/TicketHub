@@ -11,6 +11,9 @@ import Transaction from "./component/pages/Transaction";
 import Checking from "./component/pages/Checking";
 import LandingScreen from './component/pages/LandingScreen';
 import DashBoard from './DashBoard';
+import CreateTime from './component/pages/CreateTime';
+import CreateSocial from './component/pages/CreateSocial';
+import CreateImage from './component/pages/CreateImage';
 
 
 
@@ -31,6 +34,9 @@ function App() {
       <Route path="Home" element={<Home/>} />
       <Route path="BuyTicket" element={<BuyTicket/>} />
       <Route path="CreateEvent" element={<CreateEvent/>} />
+      <Route path="CreateTime" element={<CreateTime/>} />
+      <Route path="CreateSocial" element={<CreateSocial/>} />
+      <Route path="CreateImage" element={<CreateImage/>} />
       <Route path="Event" element={<Event/>} />
       <Route path="Transaction" element={<Transaction/>} />
       <Route path="Checking" element={<Checking/>} />

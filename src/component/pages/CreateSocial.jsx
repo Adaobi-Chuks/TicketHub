@@ -1,20 +1,21 @@
 import React,{useState} from 'react';
 import IMG from '../../assets/bg_image.png'
 
-const CreateEvent = () => {
-  const [input, setInput] = useState({
-    eventName:'',
-    email: '',
-    phoneNumber: '',
-    password: ''
-  });
+const CreateSocial = () => {
+    const [input, setInput] = useState({
+        eventName:'',
+        email: '',
+        phoneNumber: '',
+        password: ''
+      });
+    
+      const handleChange = (e) => {
+        setInput({
+          ...input,
+          [e.target.name]: e.target.value
+        });
+      };
 
-  const handleChange = (e) => {
-    setInput({
-      ...input,
-      [e.target.name]: e.target.value
-    });
-  };
   return (
     <div>
       <div className='absolute bottom-0 right-0'>
@@ -29,24 +30,54 @@ const CreateEvent = () => {
             <h1 className='font-bold text-lg text-white'>Create  Event</h1>
             <div className='flex gap-2'>
               <p className='bg-white text-md text-[#0D2986] rounded-md px-3 py-1'>Cancel</p>
-              <p className='bg-[#0D2986] text-md text-[#fff] rounded-md px-4 py-1'><a href='/CreateTime'>Save</a></p>
+              <p className='bg-[#0D2986] text-md text-[#fff] rounded-md px-4 py-1'><a href='/CreateImage'>Save</a></p>
             </div>                     
           </div>
 
           <div >
-            <p className='font-bold  text-white my-10'>Event Details</p>
+            <p className='font-bold  text-white my-10'>Social details</p>
 
             <div>
 
             <div className="mb-4">
+              <label className="block text-white text-sm mb-2" htmlFor="eventName">
+              Your URL  *
+              </label>
+              <input
+                className="shadow appearance-none border bg-white text-sm  rounded w-[28rem] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline "
+                id="eventName"
+                type="text"
+                placeholder="Your URL "
+                name="eventName"
+                value={input.eventName}
+                onChange={handleChange}
+              />
+             </div>
+
+             <div className="mb-4">
+              <label className="block text-white text-sm mb-2" htmlFor="eventName">
+              Linkedin URL  *
+              </label>
+              <input
+                className="shadow appearance-none border bg-white text-sm  rounded w-[28rem] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline "
+                id="eventName"
+                type="text"
+                placeholder="Linkedin URL "
+                name="eventName"
+                value={input.eventName}
+                onChange={handleChange}
+              />
+             </div>
+
+             <div className="mb-4">
               <label className="block text-white text-sm  mb-2" htmlFor="eventName">
-              Event Name *
+              Twitter URL *
               </label>
               <input
                 className="shadow appearance-none border bg-white text-sm  rounded w-[28rem] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline "
                 id="eventName"
                 type="text"
-                placeholder="Event Name"
+                placeholder="Twitter URL"
                 name="eventName"
                 value={input.eventName}
                 onChange={handleChange}
@@ -54,14 +85,14 @@ const CreateEvent = () => {
              </div>
 
              <div className="mb-4">
-              <label className="block text-white text-sm mb-2" htmlFor="eventName">
-              Event Name *
+              <label className="block text-white text-sm  mb-2" htmlFor="eventName">
+              Instagram URL *
               </label>
               <input
                 className="shadow appearance-none border bg-white text-sm  rounded w-[28rem] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline "
                 id="eventName"
                 type="text"
-                placeholder="Event Name"
+                placeholder="Instagram URL"
                 name="eventName"
                 value={input.eventName}
                 onChange={handleChange}
@@ -69,29 +100,14 @@ const CreateEvent = () => {
              </div>
 
              <div className="mb-4">
-              <label className="block text-white text-sm mb-2" htmlFor="eventName">
-              Event Name *
+              <label className="block text-white text-sm  mb-2" htmlFor="eventName">
+              Facebook URL *
               </label>
               <input
                 className="shadow appearance-none border bg-white text-sm  rounded w-[28rem] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline "
                 id="eventName"
                 type="text"
-                placeholder="Event Name"
-                name="eventName"
-                value={input.eventName}
-                onChange={handleChange}
-              />
-             </div>
-
-             <div className="mb-4">
-              <label className="block text-white text-sm mb-2" htmlFor="eventName">
-              Event Name *
-              </label>
-              <textarea
-                className="shadow appearance-none border bg-white text-sm  rounded w-[28rem] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline "
-                id="eventName"
-                type="text"
-                placeholder="Event Name"
+                placeholder="Facebook URL"
                 name="eventName"
                 value={input.eventName}
                 onChange={handleChange}
@@ -111,4 +127,4 @@ const CreateEvent = () => {
   )
 }
 
-export default CreateEvent
+export default CreateSocial
