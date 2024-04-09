@@ -19,10 +19,10 @@ const Navbar = () => {
     </div>
     <div className='flex gap-8'>
       {user ? (
-      <>
+      <div>
         <img src={IMG} alt='' className='w-[5rem] h-[5rem]'/>
-        <p>{user.name}</p>
-      </>
+        <p>{user.fulname}</p>
+      </div>
     ) : (<ul className='text-white gap-8 items-center  md:flex hidden'>
         <li className=' text-white '><a href='/Login'>Login</a></li>
         <li className='bg-[#0D2986] p-2 text-white rounded-sm'><a href='/Register'>Sign Up</a></li>
