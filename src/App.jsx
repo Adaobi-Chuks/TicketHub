@@ -1,6 +1,6 @@
 import './App.css';
 import {useState} from 'react'
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route,NavLink} from 'react-router-dom';
 import Login from "./component/auth/Login";
 import Navbar from "./component/pages/Navbar";
 import Register from './component/auth/Register';
@@ -24,16 +24,14 @@ import Summary from './component/pages/Summary';
 
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  
 
-  const useAuthentication = () => {
-    setIsLoggedIn(!isLoggedIn);
-  }
+  
   return (
     <Router>
       
       <DashBoard>
-      <Navbar isLoggedIn={isLoggedIn} useAuthentication={useAuthentication} />
+      <Navbar/> 
       </DashBoard>
       
       
