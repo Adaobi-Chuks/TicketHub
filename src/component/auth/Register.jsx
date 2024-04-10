@@ -44,9 +44,14 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const storedUser = localStorage.getItem('user')
-    if (storedUser) {
-      setInput(JSON.parse(storedUser));
+    if (validate()) {
+      try {
+        localStorage.setItem('user', JSON.stringify(input));
+        navigate('/Login', { state: input });
+        console.log('User registered successfully');
+      } catch (error) {
+        console.error('Error registering user:', error);
+      }
     } else {
       console.log("Form is invalid, please fix errors");
     }

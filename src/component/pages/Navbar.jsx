@@ -18,15 +18,21 @@ const Navbar = () => {
       <img src={Logo} alt='/' className='w-[6rem] h-[4rem]'/></a>
     </div>
     <div className='flex gap-8'>
-      {user ? (
-      <div>
-        <img src={IMG} alt='' className='w-[5rem] h-[5rem]'/>
-        <p>{user.fulname}</p>
-      </div>
-    ) : (<ul className='text-white gap-8 items-center  md:flex hidden'>
-        <li className=' text-white '><a href='/Login'>Login</a></li>
-        <li className='bg-[#0D2986] p-2 text-white rounded-sm'><a href='/Register'>Sign Up</a></li>
-      </ul>)}
+    {user !== null ? (
+          <div className='flex items-center gap-4'>
+            <img src={IMG} alt='' className='w-[5rem] h-[5rem]' />
+            <p className='text-white'>{user.fullName}</p>
+          </div>
+        ) : (
+          <ul className='text-white gap-8 items-center md:flex hidden'>
+            <li className='text-white'>
+              <a href='/Login'>Login</a>
+            </li>
+            <li className='bg-[#0D2986] p-2 text-white rounded-sm'>
+              <a href='/Register'>Sign Up</a>
+            </li>
+          </ul>
+        )}
      
     </div>
 
@@ -36,10 +42,10 @@ const Navbar = () => {
 
     <div className={!nav ? 'fixed left-0 top-0 w-[50%] h-[60%]  border-r-gray-900 bg-[#110eca] z-10 ease-in-out duration-500': 'fixed left-[-400%]'}>
     {user ? (
-      <>
+      <div>
         <img src={IMG} alt='' className='w-[5rem] h-[5rem]'/>
         <p>{user.name}</p>
-      </>
+      </div>
     ) : ( <ul className=' text-color grid items-center justify-center uppercase pt-24 '>
     <li className=' text-white '><a href='/Login'>Login</a></li>
      <li className='bg-[#0D2986] p-2 text-white rounded-sm'><a href='/Register'>Sign Up</a></li>

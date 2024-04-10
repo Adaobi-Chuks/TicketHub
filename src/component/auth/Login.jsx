@@ -32,18 +32,25 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (validate()) {
-      try {
-        localStorage.getItem('user', JSON.stringify(input));
-        navigate('/Home');
-        console.log('User logged in successfully');
-      } catch (error) {
-        console.error('Error logging in:', error);
+    const isValid = validate();
+    if (isValid) {
+      const storedUser = localStorage.getItem('user');
+      if (storedUser) {
+        const storedUserData = JSON.parse(storedUser);
+        if (storedUserData.email === input.email && storedUserData.password === input.password) {
+            navigate('/Home');
+        } else {
+            console.log("Incorrect email or password");
+        }
+      } else {
+        console.log("User not found, please register");
       }
     } else {
       console.log("Form is invalid, please fix errors");
     }
   };
+  
+  
 
   const handleChange = (e) => {
     setInput({
