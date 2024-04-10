@@ -34,7 +34,7 @@ const Login = () => {
     e.preventDefault();
     if (validate()) {
       try {
-        localStorage.setItem('user', JSON.stringify(input));
+        localStorage.getItem('user', JSON.stringify(input));
         navigate('/Home');
         console.log('User logged in successfully');
       } catch (error) {
