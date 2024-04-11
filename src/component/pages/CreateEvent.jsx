@@ -24,16 +24,12 @@ const CreateEvent = () => {
     if (!input.eventType.trim()) {
       errors.eventType = 'Event type is required';
       isValid = false;
-    }
-
-  
+    }  
 
     if (!input.eventDes.trim()) {
       errors.eventDes = 'Event description is required';
       isValid = false;
-    }
-
-    
+    }    
 
     setErrors(errors);
     return isValid;

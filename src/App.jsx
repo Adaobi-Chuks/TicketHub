@@ -20,6 +20,7 @@ import SingleTicket from './component/pages/SingleTicket';
 import GroupTicket from './component/pages/GroupTicket';
 import CheckOut from './component/pages/CheckOut';
 import Summary from './component/pages/Summary';
+import EventSummary from './component/pages/EventSummary';
 
 
 
@@ -54,6 +55,7 @@ function App() {
       <Route path="GroupTicket" element={<GroupTicket/>} />
       <Route path="Checking" element={<Checking/>} />
       <Route path="Summary" element={<Summary/>} />
+      <Route path="EventSummary" element={<EventSummary/>} />
       </Routes>
     </Router>
   )
