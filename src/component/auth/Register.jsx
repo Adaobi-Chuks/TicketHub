@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import IMG from '../../assets/signup.png';
 import logo from '../../assets/logo.png';
+import { Oval } from 'react-loader-spinner'
 
 const Register = () => {
   const [input, setInput] = useState({
@@ -9,7 +10,7 @@ const Register = () => {
     email: '',
     password: ''
   });
-
+ const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
@@ -42,19 +43,27 @@ const Register = () => {
     return isValid;
   };
 
-  const handleSubmit = (e) => {
+ 
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (validate()) {
-      try {
-        localStorage.setItem('user', JSON.stringify(input));
-        navigate('/Login', { state: input });
-        console.log('User registered successfully');
-      } catch (error) {
-        console.error('Error registering user:', error);
+    setLoading(true); 
+    setTimeout(() => {
+      if (validate()) {
+        setLoading(false); 
+        try {
+          localStorage.setItem('user', JSON.stringify(input));
+          navigate('/Login', { state: input });
+          console.log('User registered successfully');
+        } catch (error) {
+          console.error('Error registering user:', error);
+        } 
+      } else {
+        console.log("Form is invalid, please fix errors");
+        setLoading(false); 
       }
-    } else {
-      console.log("Form is invalid, please fix errors");
-    }
+    },3000)
+    
   };
 
   const handleChange = (e) => {
@@ -66,7 +75,7 @@ const Register = () => {
 
   return (
     <div>
-      <div className='flex justify-between items-center'>
+       <div className='flex justify-between items-center'>
         <div className='bg-[#0D2986] h-screen w-[45rem] sm:flex hidden'>
           <img src={logo} className='w-[4rem] h-[3rem] m-6' alt="Logo" />
           <div className='grid justify-center items-center ml-10 gap-4'>
@@ -130,8 +139,8 @@ const Register = () => {
                 />
                 {errors.password && <p className='text-red-500 text-xs italic'>{errors.password}</p>}
               </div>
-              <button type="submit" className='flex w-[18rem] justify-center cursor-pointer items-center gap-6 bg-[#0D2986] px-4 py-2 text-[rgb(255,255,255)]'>
-                Register
+              <button type="submit" disabled={loading}  className='flex w-[18rem] justify-center cursor-pointer items-center gap-6 bg-[#0D2986] px-4 py-2 text-[rgb(255,255,255)]'>
+              {loading ? <Oval  visible={true}  height="20" width="20" color="#ffff"  ariaLabel="oval-loading"  wrapperStyle={{}}  wrapperClass=""  /> :'Register'}
               </button>
             </form>
 

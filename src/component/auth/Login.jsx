@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import IMG from '../../assets/login.png';
 import logo from '../../assets/logo.png';
+import { Oval } from 'react-loader-spinner'
 
 const Login = () => {
   const [input, setInput] = useState({
@@ -9,6 +10,7 @@ const Login = () => {
     password: ''
   });
 
+  const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
@@ -32,22 +34,25 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const isValid = validate();
-    if (isValid) {
-      const storedUser = localStorage.getItem('user');
-      if (storedUser) {
-        const storedUserData = JSON.parse(storedUser);
-        if (storedUserData.email === input.email && storedUserData.password === input.password) {
-            navigate('/Home');
+    setLoading(true)
+    setTimeout(() => {
+      const isValid = validate();
+      if (isValid) {
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+          const storedUserData = JSON.parse(storedUser);
+          if (storedUserData.email === input.email && storedUserData.password === input.password) {
+              navigate('/Home');
+          } else {
+              console.log("Incorrect email or password");
+          }
         } else {
-            console.log("Incorrect email or password");
+          console.log("User not found, please register");
         }
       } else {
-        console.log("User not found, please register");
+        console.log("Form is invalid, please fix errors");
       }
-    } else {
-      console.log("Form is invalid, please fix errors");
-    }
+    },3000)   
   };
   
   
@@ -112,7 +117,7 @@ const Login = () => {
               </div>
 
               <button type="submit" className='flex w-[18rem] justify-center cursor-pointer items-center gap-6 bg-[#0D2986] px-4 py-2 text-[rgb(255,255,255)]'>
-                Login
+                {loading ? <Oval  visible={true}  height="20" width="20" color="#ffff"  ariaLabel="oval-loading"  wrapperStyle={{}}  wrapperClass=""  /> :'Login'}
               </button>
             </form>
 

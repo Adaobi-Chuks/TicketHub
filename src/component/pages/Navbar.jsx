@@ -4,11 +4,7 @@ import { AiOutlineClose, AiOutlineMenu, AiOutlineUser } from 'react-icons/ai';
 import { NavLink } from 'react-router-dom';
 import { useAuth } from '../../AuthContext'; 
 import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
-import Checking from './Checking';
-import Account from './Account';
-import EventList from './EventList';
-import Transaction from './Transaction';
-// Import useAuth hook
+
 
 const Navbar = () => {
   const [nav, setNav] = useState(true);
@@ -37,7 +33,10 @@ const Navbar = () => {
           <div onClick={handleShow} className='flex gap-2'>
           <AiOutlineUser size={30} className='bg-white p-2 rounded-2xl'/>
           
-        {!show ? <MdArrowDropDown size={30} color='#fff'/> : <MdArrowDropUp size={30} color='#fff'/>}
+        {
+        !show ? <MdArrowDropDown size={30} color='#fff'/>
+         : <MdArrowDropUp size={30} color='#fff'/>
+         }
         <div className={!show ? 'fixed right-10 top-[8%]  p-4  border-r-gray-900 bg-[#8a8a8a] z-10 ease-in-out duration-500' : 'fixed left-[-400%]'}>
         <ul className='text-color grid items-center justify-center uppercase gap-2'>
         <li className='text-white hover:bg-blue-500 p-1 rounded-md'>
