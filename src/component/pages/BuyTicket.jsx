@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import IMG from '../../assets/bg_image.png';
+import { useNavigate } from 'react-router-dom';
 
 const ticket = [
   {
@@ -16,6 +17,7 @@ const ticket = [
   }
 ]
 const BuyTicket = () => {
+  const navigate = useNavigate();
   const [input, setInput] = useState({
     eventName:'',
     });
@@ -66,7 +68,7 @@ const BuyTicket = () => {
               {ticket.map(({name,status}, index) => (
                 <ul key={index} className='flex justify-between text-white text-md mt-5'>
                   <li>{name}</li>
-                  <li className='text-green-600'><a href='/ChooseTicket'>{status}</a></li>
+                  <li onClick={() => navigate('/ChooseTicket')} className='text-green-600'>{status}</li>
                 </ul>
               ))}
             </div> 

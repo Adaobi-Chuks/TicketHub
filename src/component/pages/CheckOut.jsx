@@ -1,8 +1,9 @@
 import React,{useState} from 'react';
 import IMG from '../../assets/bg_image.png'
-
+import { useNavigate } from 'react-router-dom';
 
 const CheckOut = () => {
+    const navigate = useNavigate();
   return (
     <div>
       <div className='absolute bottom-0 right-0'>
@@ -65,8 +66,11 @@ const CheckOut = () => {
                         <p className='text-white'>$55</p>
                     </div>
                 </div>
-
-                <button className='text-[white] bg-[#0D2986] w-[10rem] py-2'><a href='/Summary'>Pay Now</a></button>
+                    <div className='flex gap-3'>
+                    <button onClick={() => navigate('/ChooseTicket')}  className='text-[#0D2986] bg-[white] w-[10rem] py-2'>Cancel</button>
+                    <button onClick={() => navigate('/Summary')}  className='text-[white] bg-[#0D2986] w-[10rem] py-2'>Pay Now</button>
+                    </div>
+                
             </div>   
 
           </div>         
