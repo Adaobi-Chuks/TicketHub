@@ -1,9 +1,18 @@
-import React,{useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import IMG from '../../assets/bg_image.png'
 import { useNavigate } from 'react-router-dom';
 
 const CheckOut = () => {
     const navigate = useNavigate();
+    const [userData, setUserData] = useState(null);
+
+    useEffect(() => {
+        const storedData = localStorage.getItem('user');
+        if (storedData) {
+            setUserData(JSON.parse(storedData));
+        }
+    }, []);
+
   return (
     <div>
       <div className='absolute bottom-0 right-0'>
@@ -24,17 +33,17 @@ const CheckOut = () => {
 
                     <div className='flex justify-between '> 
                         <p className='text-white'>Date :</p>
-                        <p className='text-white'>Wednesday, February 21 2024</p>
+                        <p className='text-white'>{userData.startDate}</p>
                     </div>
 
                     <div className='flex justify-between '> 
                         <p className='text-white'>Guest :</p>
-                        <p className='text-white'>1</p>
+                        <p className='text-white'>{userData.ticketPurchase}</p>
                     </div>
 
                     <div className='flex justify-between '> 
                         <p className='text-white'>Amount :</p>
-                        <p className='text-white'>$50</p>
+                        <p className='text-white'>${userData.ticketPrice}</p>
                     </div>
                 </div>
 

@@ -7,7 +7,7 @@ const CreateEvent = () => {
   const [input, setInput] = useState({
     eventName:'',
     eventType: '',
-    eventPattern: '',
+    eventPrice: '',
     eventDes: ''
   });
   const [errors, setErrors] = useState({});
@@ -30,6 +30,10 @@ const CreateEvent = () => {
       errors.eventDes = 'Event description is required';
       isValid = false;
     }    
+    if (!input.eventPrice.trim()) {
+      errors.eventPrice = 'Event Price is required';
+      isValid = false;
+    }  
 
     setErrors(errors);
     return isValid;
@@ -118,18 +122,18 @@ const CreateEvent = () => {
 
              <div className="mb-4">
               <label className="block text-white text-sm mb-2" htmlFor="eventName">
-              Event Pattern*
+              Event Price*
               </label>
               <input
                 className="shadow appearance-none border bg-white text-sm  rounded w-[28rem] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline "
-                id="eventPattern"
+                id="eventPrice"
                 type="text"
-                placeholder="Event Pattern"
-                name="eventPattern"
-                value={input.eventPattern}
+                placeholder="Event Price"
+                name="eventPrice"
+                value={input.eventPrice}
                 onChange={handleChange}
               />
-             
+             {errors.eventPrice && <p className='text-red-500 text-xs italic'>{errors.eventPrice}</p>}
              </div>
 
              <div className="mb-4">
