@@ -51,7 +51,7 @@ const CreateSocial = () => {
            if (validate()) {
              try {
               localStorage.setItem('user', JSON.stringify(input));
-              navigate('/CreateImage', { state: input });
+              navigate('/CreateTime', { state: input });
               console.log('User registered successfully');
             } catch (error) {
               console.error('Error registering user:', error);

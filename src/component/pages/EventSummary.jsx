@@ -32,15 +32,28 @@ const EventSummary = () => {
                   <p className='text-white font-bold text-lg'>{userData.eventName}</p>
                   <p className='text-white font-bold text-lg'>{userData.eventType}</p>
 
-                  <div className='flex justify-between '> 
+                <div className='flex justify-between'>
+                <div className='flex justify-between '> 
                       <p className='text-white'>Start Date :</p>
                       <p className='text-white'>{userData.startDate}</p>
                   </div>
-
                   <div className='flex justify-between '> 
+                      <p className='text-white'>Start Time :</p>
+                      <p className='text-white'>{userData.startDate}</p>
+                  </div>
+                </div>
+                  
+                <div className='flex justify-between'>
+                <div className='flex justify-between '> 
                       <p className='text-white'>End Date :</p>
                       <p className='text-white'>{userData.endDate}</p>
                   </div>
+                  <div className='flex justify-between '> 
+                      <p className='text-white'>End Time :</p>
+                      <p className='text-white'>{userData.endDate}</p>
+                  </div>
+                </div>
+                  
                   <div className='flex justify-between '> 
                       <p className='text-white'>Location :</p>
                       <p className='text-white'>{userData.location}</p>

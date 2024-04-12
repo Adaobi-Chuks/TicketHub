@@ -22,14 +22,14 @@ const CheckOut = () => {
 
       <div className=" flex  sm:flex-row items-center justify-center mx-20">
       <div className='  mx-auto grid sm:flex-rows-2  justify-center items-center'>
-      <div  className=' bg-[#142D8E50] mt-[8rem] justify-center items-center   h-[35rem] px-20 py-7'>
+      <div  className=' bg-[#142D8E50] mt-[8rem] justify-center items-center  px-20 py-7'>
       <div className='w-[50rem] mx-auto grid md:grid-cols-2 gap-16 justify-center items-center  pt-[5rem]'>          
 
             <div className='border-r-2 p-8 border-white gap-2'>
-                <p className='text-white font-bold text-2xl'>Check Out</p>
+                <p className='text-white font-bold text-xl'>Check Out</p>
 
                 <div className='my-10 gap-4 grid'>
-                    <p className='text-white font-bold text-lg'>Oracle NFT Event</p>
+                    <p className='text-white font-bold text-md'>Oracle NFT Event</p>
 
                     <div className='flex justify-between '> 
                         <p className='text-white'>Date :</p>
@@ -47,13 +47,13 @@ const CheckOut = () => {
                     </div>
                 </div>
 
-                <p className='text-[white]'>this payment requires you pay bank charges and no payment is refundable</p>
+                <p className='text-[#9d9d9d] text-xs'>this payment requires you pay bank charges and no payment is refundable</p>
             </div>    
             <div className=' border-white gap-2'>
-                <p className='text-white font-bold text-2xl'>Summary</p>
+                <p className='text-white font-bold text-xl'>Summary</p>
 
                 <div className='my-10 gap-4 grid'>
-                    <p className='text-white font-bold text-lg'>Oracle NFT Event</p>
+                    <p className='text-white font-bold text-md'>Oracle NFT Event</p>
 
                     <div className='flex justify-between '> 
                         <p className='text-white'>1 X Oracle NFT :</p>
@@ -90,4 +90,4 @@ const CheckOut = () => {
   )
 }
 
-export default CheckOut
+export default CheckOut;

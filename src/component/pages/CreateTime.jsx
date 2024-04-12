@@ -7,7 +7,9 @@ const CreateTime = () => {
   const navigate = useNavigate();
     const [input, setInput] = useState({
         startDate:'',
+        startTime:'',
         endDate: '',
+        endTime: '',
         location: ''        
       });
       
@@ -20,8 +22,8 @@ const CreateTime = () => {
       const handleSubmit = async (e) => {
         e.preventDefault();
           try {
-              localStorage.setItem('user', JSON.stringify(input));
-              navigate('/CreateSocial', { state: input });
+            localStorage.setItem('user', JSON.stringify({ ...input, startDate: new Date() }));
+              navigate('/CreateTime', { state: input });
               console.log('User registered successfully');
             } catch (error) {
               console.error('Error registering user:', error);
@@ -78,38 +80,71 @@ const CreateTime = () => {
                    defaultToSystemTimezone
                  />
                  </div>
+                   <div className='flex gap-2'>
 
-                 <div className="mb-4">
+                   <div className="mb-4">
                   <label className="block text-white text-sm font-bold mb-2" htmlFor="eventName">
                   Start Date *
                   </label>
                   <input
-                    className="shadow appearance-none border bg-white text-sm  rounded w-[28rem] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline "
+                    className="shadow appearance-none border bg-white text-sm  rounded w-[14rem] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline "
                     id="startDate"
                     type="date"
                     placeholder="Start Date"
                     name="startDate"
                     value={input.startDate}
                     onChange={handleChange}
-                  />
-                  
+                  />                  
                  </div>
-    
                  <div className="mb-4">
+                  <label className="block text-white text-sm font-bold mb-2" htmlFor="eventName">
+                  Start Time *
+                  </label>
+                  <input
+                    className="shadow appearance-none border bg-white text-sm  rounded w-[14rem] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline "
+                    id="startDate"
+                    type="time"
+                    placeholder="Start Time"
+                    name="startTime"
+                    value={input.startTime}
+                    onChange={handleChange}
+                  />                  
+                 </div>
+                   </div>
+                 
+                   <div className='flex gap-2'>
+
+                   <div className="mb-4">
                   <label className="block text-white text-sm font-bold mb-2" htmlFor="eventName">
                   End Date *
                   </label>
                   <input
-                    className="shadow appearance-none border bg-white text-sm  rounded w-[28rem] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline "
+                    className="shadow appearance-none border bg-white text-sm  rounded w-[14rem] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline "
                     id="End Date"
                     type="date"
                     placeholder="End Date"
                     name="endDate"
                     value={input.endDate}
                     onChange={handleChange}
-                  />
-                 
+                  />                 
                  </div>
+
+                 <div className="mb-4">
+                  <label className="block text-white text-sm font-bold mb-2" htmlFor="eventName">
+                  End Time *
+                  </label>
+                  <input
+                    className="shadow appearance-none border bg-white text-sm  rounded w-[14rem] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline "
+                    id="End Date"
+                    type="time"
+                    placeholder="End Time"
+                    name="endTime"
+                    value={input.endTime}
+                    onChange={handleChange}
+                  />                 
+                 </div>
+                   </div>
+                
     
                  <div className="mb-4">
                   <label className="block text-white text-sm font-bold mb-2" htmlFor="eventName">

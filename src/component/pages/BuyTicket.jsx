@@ -68,7 +68,7 @@ const BuyTicket = () => {
               {ticket.map(({name,status}, index) => (
                 <ul key={index} className='flex justify-between text-white text-md mt-5'>
                   <li>{name}</li>
-                  <li onClick={() => navigate('/ChooseTicket')} className='text-green-600'>{status}</li>
+                  <button onClick={() => navigate('/ChooseTicket')} className='text-green-600'>{status}</button>
                 </ul>
               ))}
             </div> 

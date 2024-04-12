@@ -11,7 +11,7 @@ const Management = () => {
      <p className='md:pt-4 text-start text-[#ffff]'>Start from a ready-made template, and customize your event website and registration or RSVP experience from end-to-end. Track event invitees from invitation with RSVP link to registration to check-in.</p>
      
    </div>
-     <img src={IMG1}  alt='' className="md:w-[30rem] h-[25rem] object-contain"/>
+     <img src={IMG1}  alt='' className="md:w-[40rem] h-[40rem] object-contain"/>
    </div>
    
    </div>
